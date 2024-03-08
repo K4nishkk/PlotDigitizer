@@ -30,61 +30,61 @@ usernameButton.click()
 
 input()
 
-url = driver.current_url
+for i in range(40, 42):
 
-projectButton = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-testid='project-select-trigger']")))
-projectButton.click()
+    projectButton = getElement("//button[@data-testid='project-select-trigger']")
+    projectButton.click()
 
-newProjectButton = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@data-testid='project-select-add-new-project']")))
-newProjectButton.click()
+    newProjectButton = getElement("//a[@data-testid='project-select-add-new-project']")
+    newProjectButton.click()
 
-projectName = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@name='projectName']")))
-projectName.send_keys("Meow21")
+    projectName = getElement("//input[@name='projectName']")
+    projectName.send_keys("Meow" + str(i))
 
-time.sleep(5)
-newProjectNameButton = driver.find_element(By.XPATH, "//button[@name='next']")
-newProjectNameButton.click()
+    time.sleep(10)
+    newProjectNameButton = driver.find_element(By.XPATH, "//button[@name='next']")
+    newProjectNameButton.click()
 
-# same button attribute to create new project
-time.sleep(5)
-newProjectNameButton = driver.find_element(By.XPATH, "//button[@name='next']")
-newProjectNameButton.click()
+    # same button attribute to create new project
+    time.sleep(10)
+    newProjectNameButton = driver.find_element(By.XPATH, "//button[@name='next']")
+    newProjectNameButton.click()
 
-createCluster = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-testid='create-cluster-button']")))
-createCluster.click()
+    createCluster = getElement("//button[@data-testid='create-cluster-button']")
+    createCluster.click()
 
-choseM0 = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//label[@for='radio-box-47']"))) # radio button for choice b/w M0, M2, M5
-choseM0.click()
+    choseM0 = getElement("//div[@data-testid='template-inner-card-m0']") # radio button for choice b/w M0, M2, M5
+    choseM0.click()
 
-clickButton = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-testid='primary-cta']")))
-clickButton.click()
+    clickButton = getElement("//button[@data-testid='primary-cta']")
+    clickButton.click()
 
-passwordInput = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//input[@id='textinput-14']")))
-passwordInput.send_keys("qwerQWERasdfASDF")
+    passwordInput = getElement("//input[@id='textinput-14']")
+    passwordInput.send_keys("qwerQWERasdfASDF")
 
-createUser = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@name='create-user']")))
-createUser.click()
+    createUser = getElement("//button[@name='create-user']")
+    createUser.click()
 
-continueButton = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@data-testid='continueButton']")))
-continueButton.click()
+    continueButton = getElement("//button[@data-testid='continueButton']")
+    continueButton.click()
 
-networkAccess = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='#/security/network']")))
-networkAccess.click()
+    networkAccess = getElement("//a[@href='#/security/network']")
+    networkAccess.click()
 
-addIP = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='#/security/network/accessList/addToAccessList']")))
-addIP.click()
+    addIP = getElement("//a[@href='#/security/network/accessList/addToAccessList']")
+    addIP.click()
 
-allowAccess = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@name='allowAccessAnywhere']")))
-allowAccess.click()
+    allowAccess = getElement("//button[@name='allowAccessAnywhere']")
+    allowAccess.click()
 
-confirmButton = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//button[@name='confirm']")))
-confirmButton.click()
+    confirmButton = getElement("//button[@name='confirm']")
+    confirmButton.click()
 
-databaseLink = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, "//a[@href='#/clusters']")))
-databaseLink.click()
+    # databaseLink = getElement("//a[@href='#/clusters']")
+    # databaseLink.click()
 
-connectButton = getElement("//button[@data-testid='js-connect']")
-connectButton.click()
+    # connectButton = getElement("//button[@data-testid='js-connect']")
+    # connectButton.click()
 
-mongoDrivers = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".button .button-is-descriptive .cluster-connect-modal-option-button")))
-mongoDrivers.click()
+    # mongoDrivers = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.CSS_SELECTOR, ".button .button-is-descriptive .cluster-connect-modal-option-button")
+    # mongoDrivers.click()
