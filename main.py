@@ -1,3 +1,5 @@
+import sys
+
 from preprocess import preprocess_image
 from axisDetection import detect_axes
 from displayImages import displayImage
@@ -13,5 +15,9 @@ def main(image_path):
     displayImage(original_image, preprocessed_image, axes_image)
 
 if __name__ == "__main__":
-    image_path = "images/graph3.png"
+    if len(sys.argv) != 2:
+        print("Image number not entered")
+        sys.exit()
+    
+    image_path = f"images/graph{sys.argv[1]}.png"
     main(image_path)
